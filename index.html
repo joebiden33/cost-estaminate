@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Estaminate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cost Estaminate</h1>
+        <form id="shippingForm">
+            <label for="itemName">Nazwa przedmiotu:</label><br>
+            <input type="text" id="itemName" name="itemName" required><br><br>
+            <label for="itemPrice">Cena (w yuanach):</label><br>
+            <input type="number" id="itemPrice" name="itemPrice" step="0.01" required><br><br>
+            <label for="itemWeight">Waga (w gramach):</label><br>
+            <input type="number" id="itemWeight" name="itemWeight" step="0.01" required><br><br>
+            <label for="shippingMethod">Metoda przesyłki:</label><br>
+            <select id="shippingMethod" name="shippingMethod" required>
+                <option value="dhl">DHL - 80 PLN za kg</option>
+                <option value="cnline">CNLine - 60 PLN za kg</option>
+            </select><br><br>
+            <button type="button" onclick="addItem()">Dodaj przedmiot</button>
+        </form>
+        
+        <div class="summary">
+            <h2>Podsumowanie</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nazwa przedmiotu</th>
+                        <th>Cena (w yuanach)</th>
+                        <th>Cena (w PLN)</th>
+                        <th>Waga (w gramach)</th>
+                        <th>Metoda przesyłki</th>
+                        <th>Koszt wysyłki (w PLN)</th>
+                        <th>Usuń</th>
+                    </tr>
+                </thead>
+                <tbody id="summaryTableBody">
+                </tbody>
+            </table>
+            <div class="total-cost">
+                <h3>Całkowita cena</h3>
+                <p id="totalPrice">0.00 PLN</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
